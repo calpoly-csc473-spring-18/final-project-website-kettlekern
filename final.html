@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kyle Kern - Final Project 473</title>
+</head>
+<body>
+
+<h1>Fog</h1>
+<p>I used simplex noise to create fog, either globally or contained within an object. 
+I wanted to do fog because I thought it would be interesting to look at and easy to animate. 
+I also thought it would be versatile in that I could use objects to contain the fog and move it around the scene to make more interesting scenes
+</p>
+<img src="Working Fog.png" alt="Global Fog">
+<p>This was my first successful attempt to render fog. The fog varies in density in the scene. 
+This seemed lackluster to me when I first rendered it, and I wanted more. 
+I decided the next step was to try to encapsulate the fog in objects.</p>
+<img src="Large White Fog.gif" alt="Large Sphere">
+<p>This image was the next step for my fog. I used the refraction ray from objects to calculate fog density, color, and shadows. 
+With this modification, I was able to create fog clouds that could move around easily in a scene, and shadows that changed density with the fog.
+Because I used ray-marching to calculate an approximate integral for the fog's density for rays passing through it, the shadow from the fog cloud looks more realistic because it's density changes with the density of the visible fog.</p>
+<img src="1080p super sample.png" alt="Large Image">
+<img src="NestedRefractCubed.gif" alt="Fog in Fog">
+<img src="Nested Refraction Fog Cubed.gif" alt="Nested Fog">
+<p>Because fog usually has things in it and I was using refraction to track the fog, I wanted to try to get nested refraction working. 
+I was able to have refractive objects in other objects and still track the ior of each objects as the ray passed from one object to another.
+Fog inside of fog broke late in development when I started using the time the ray spent in the fog cloud to amplify the amount of fog gathered, but it was working earlier in development as shown below.</p>
+<img src="NestedRefractFog.gif" alt="Fog Shadows">
+<p>Animation of the fog was accomplished by tracking a time component for each frame, then moving the fog through a fourth dimension of time to determine its density.
+One final gif of global fog.</p>
+<img src="GlobalFog.gif" alt="Global Gif">
+
+
+</body>
+</html>
